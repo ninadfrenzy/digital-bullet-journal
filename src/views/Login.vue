@@ -43,7 +43,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
     .intro {
         font-family: Source Code Pro, monospace;
         font-size: 14px;
