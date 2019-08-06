@@ -1,24 +1,19 @@
 <template>
   <div id="app">
-    <Scaffolding />
-    <Daylog />
+    <Scaffolding/>
+    <router-view></router-view>    
   </div>
 </template>
 
 <script>
-
 import Scaffolding from '@/components/Scaffolding.vue'
-import Daylog from '@/components/Daylog.vue'
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    Scaffolding,
-    Daylog
+    Scaffolding
   }
-
-}
+};
 </script>
 
 <style>
-
 </style>
