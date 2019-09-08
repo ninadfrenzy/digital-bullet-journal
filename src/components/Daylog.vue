@@ -40,6 +40,11 @@
                   <li class="list-group-item" v-for="task in tasks" :key="task.id">{{task.task}}</li>
                 </ul>
               </div>
+              <div class="row">
+                <div class="col-4 offset-4 text-center">
+                  <button @click="saveDay()" class="btn btn-primary">Save</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -126,6 +131,17 @@ export default {
         id:this.tasks.length+1,
         task:this.note
         
+      })
+    },
+    saveDay () {
+      let today = this.date
+      console.log(today.date)
+      db.collection("daylog").doc(today.date).set({
+        ideas:this.ideas,
+        events:this.events,
+        tasks:this.tasks
+      }).then(() => {
+        console.log('added')
       })
     }
   }
